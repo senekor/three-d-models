@@ -44,7 +44,7 @@ module lid_base()
     // should be about +4ms on each side
     scale([ 1.1, 1.1, 1 ])
     {
-        linear_extrude(height = 5)
+        linear_extrude(height = 4)
         {
             becher_innenumfang();
         }
