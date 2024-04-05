@@ -59,7 +59,7 @@ module lid_wedge()
         {
             becher_innenumfang();
         }
-        translate([0,0,-1]) 
+        translate([ 0, 0, -1 ])
         {
             linear_extrude(height = 7, scale = 1.3)
             {
