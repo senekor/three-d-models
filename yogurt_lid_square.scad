@@ -1,8 +1,9 @@
+include <yogurt_lid_lib.scad>
+
 $fn = 100;
 
 module halb_viertel_becher_innenumfang()
 {
-
     polygon(points = [
         [ 0, 0 ],
         [ 39, 0 ],
@@ -38,41 +39,4 @@ module becher_innenumfang()
     rotate(a = 270) viertel_becher_innenumfang();
 }
 
-module lid_base()
-{
-    // scale 110% in x and y
-    // should be about +4ms on each side
-    scale([ 1.1, 1.1, 1 ])
-    {
-        linear_extrude(height = 4)
-        {
-            becher_innenumfang();
-        }
-    }
-}
-
-module lid_wedge()
-{
-    difference()
-    {
-        linear_extrude(height = 5, scale = 0.95)
-        {
-            becher_innenumfang();
-        }
-        translate([ 0, 0, -1 ])
-        {
-            linear_extrude(height = 7, scale = 1.3)
-            {
-                scale([ 0.7, 0.7, 1 ]) becher_innenumfang();
-            }
-        }
-    }
-}
-
-module yogurt_lid()
-{
-    scale([ 1, 1, -1 ]) lid_base();
-    lid_wedge();
-}
-
-yogurt_lid();
+yogurt_lid() becher_innenumfang();
