@@ -6,8 +6,8 @@ module base_triangle()
         [ 0, 0 ],
         [ 60, 0 ],
         [ 60, 10 ],
-        [ 15.5, 70 ],
-        [ -15.5, 70 ],
+        [ 15.3, 70 ],
+        [ -15.3, 70 ],
         [ -60, 10 ],
         [ -60, 0 ],
     ]);
@@ -37,10 +37,10 @@ module softer_base_triangle()
             // to make round edges at entry of
             // laptop cutout
             polygon(points = [
-                [ 5.5, 50 ],
-                [ 5.5, 90 ],
-                [ -5.5, 90 ],
-                [ -5.5, 50 ],
+                [ 5.3, 50 ],
+                [ 5.3, 90 ],
+                [ -5.3, 90 ],
+                [ -5.3, 50 ],
             ]);
         }
     }
@@ -49,10 +49,10 @@ module softer_base_triangle()
 module laptop_cutout()
 {
     polygon(points = [
-        [ 5.5, 10 ],
-        [ 5.5, 90 ],
-        [ -5.5, 90 ],
-        [ -5.5, 10 ],
+        [ 5.3, 10 ],
+        [ 5.3, 90 ],
+        [ -5.3, 90 ],
+        [ -5.3, 10 ],
     ]);
 }
 
@@ -76,9 +76,9 @@ module triangle_cutouts()
 module wedge()
 {
     polygon(points = [
-        [ -5.5, 19.5 ],
-        [ 3.5, 10 ],
-        [ -5.5, 10 ],
+        [ -5.3, 21 ],
+        [ 2.8, 10 ],
+        [ -5.3, 10 ],
     ]);
 }
 
@@ -92,7 +92,7 @@ module stand()
     wedge();
 }
 
-linear_extrude(height = 1)
+linear_extrude(height = 15)
 {
     stand();
 }
