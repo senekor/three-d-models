@@ -1,6 +1,6 @@
 $fn = 100;
 
-FLOOR_W = 80;
+FLOOR_W = 90;
 FLOOR_H = 60;
 
 RAIL_HEIGHT = 4;
@@ -11,9 +11,9 @@ RAIL_THICK_HALF = RAIL_THICK / 2;
 THIN_W = 5;
 BROAD_W = 10.5;
 
-ANGLE = 20;
+ANGLE = 23;
 // broad range offset depends on angle, adjust accordingly
-BR_OFFSET = 3.65;
+BR_OFFSET = 4.76;
 
 module floor_outline()
 {
