@@ -1,3 +1,5 @@
+$fn = 100;
+
 module pcb_outline()
 {
     polygon(points = [
@@ -20,14 +22,6 @@ module pcb_outline()
         [ 38.425, -4.5 ],
         [ 38.425, 0 ],
     ]);
-}
-
-module center_pcb_outline()
-{
-    translate([ -70, -30, 0 ])
-    {
-        children();
-    }
 }
 
 module inner()
@@ -99,4 +93,38 @@ module kbd_case()
     }
 }
 
-center_pcb_outline() kbd_case();
+module unibody_half() {
+    rotate([0,0,202]) translate([-136,0,0]) kbd_case();
+}
+
+module unibody_floor() {
+    linear_extrude(height=1.999) offset(r=4) offset(r=-4) polygon([
+        [148,40],
+        [148,-65],
+        [-148,-65],
+        [-148,40],
+    ]);
+}
+
+unibody_half();
+scale([-1,1,1]) unibody_half();
+unibody_floor();
+
+linear_extrude(height=6) polygon([
+    [-68,38],
+    [-68.5,36],
+    [-70.5,36],
+    [-71.5,34],
+    [-85,40],
+    [85,40],
+    [71.5,34],
+    [70.5,36],
+    [68.5,36],
+    [68,38],
+]);
+linear_extrude(height=6) polygon([
+    [-32,-63],
+    [-35,-65],
+    [35,-65],
+    [32,-63],
+]);
