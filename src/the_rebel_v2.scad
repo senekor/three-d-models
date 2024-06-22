@@ -18,7 +18,7 @@ module rail()
 {
     difference()
     {
-        rotate([ ANGLE, 0, 0 ]) translate([ BODY_WIDTH+1, 0, -97 ]) cube([ 2, 100, 100 ]);
+        rotate([ ANGLE, 0, 0 ]) translate([ BODY_WIDTH+1, 0, -98 ]) cube([ 2, 100, 100 ]);
         cube([ 30, 5, 20 ], center = true);
     }
 }
