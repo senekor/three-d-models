@@ -3,17 +3,18 @@
 
 $fn = 100;
 
-leglen = 40;
-legwid = 7;
-legthick = 5;
+screw_radius = 4.6;
+leglen = 50;
+legwid = screw_radius * 2;
+legthick = 7;
 
 module screw_hole() {
-  translate([0, 0, 1]) linear_extrude(height=legthick) circle(r=5);
+  translate([0, 0, 1]) linear_extrude(height=legthick) circle(r=screw_radius);
   translate([0, 0, -1]) linear_extrude(height=legthick) circle(r=2.5);
 }
 
 module leg() {
-  linear_extrude(height=legthick) circle(r=6);
+  linear_extrude(height=legthick) circle(r=screw_radius + 1);
   linear_extrude(height=legthick) translate([leglen / 2, 0, 0]) square(size=[leglen, legwid], center=true);
 }
 
