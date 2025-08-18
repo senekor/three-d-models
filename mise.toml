@@ -1,0 +1,5 @@
+[tasks]
+setup = [
+  "sudo dnf install -y openscad",
+  "cargo binstall -y openscad-lsp",
+]
