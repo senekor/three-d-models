@@ -3,3 +3,4 @@ setup = [
   "sudo dnf install -y openscad",
   "cargo binstall -y openscad-lsp",
 ]
+render = 'openscad "$(echo src/* | xargs -n1 | fzf)"'
