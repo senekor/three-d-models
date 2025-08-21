@@ -1,7 +1,7 @@
 $fn = 100;
 
-total_height = 100;
-base_height = 20;
+total_height = 230;
+base_height = 10;
 
 module outer_wall(height) {
   linear_extrude(height) square([45, 27], center=true);
