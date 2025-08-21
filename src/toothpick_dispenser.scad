@@ -25,11 +25,15 @@ module magazine(height) {
 }
 
 module base_outer_wall(height) {
-  linear_extrude(height) square([49, 31], center=true);
+  linear_extrude(height) square([49.3, 31.3], center=true);
+}
+
+module base_inner_wall(height) {
+  linear_extrude(height) square([45.3, 27.3], center=true);
 }
 
 module base_cutout() {
-  translate([0, 0, 0]) outer_wall(30);
+  translate([0, 0, 0]) base_inner_wall(30);
   translate([5, 0, 0]) linear_extrude(30) square([45, 23], center=true);
 }
 
